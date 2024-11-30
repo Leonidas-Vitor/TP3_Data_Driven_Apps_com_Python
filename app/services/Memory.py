@@ -1,7 +1,7 @@
 """Utility functions and classes."""
 from langchain.memory import ConversationBufferMemory
 from langchain_core.prompts import MessagesPlaceholder
-from langgraph.checkpoint.memory import MemorySaver
+#from langgraph.checkpoint.memory import MemorySaver
 
 def init_memory():
     """Initialize the memory for contextual conversation.
