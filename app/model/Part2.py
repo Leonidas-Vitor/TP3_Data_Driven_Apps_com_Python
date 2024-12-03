@@ -24,6 +24,9 @@ avatars = {
 }
 
 def WriteHistory(messages):
+    '''
+    Escreve o histórico de mensagens
+    '''
     try:
         #for history in st.session_state[memoryKey]:
             #role = 'Usuário' if 'Usuário' in history else 'Assistente'
@@ -38,7 +41,9 @@ def WriteHistory(messages):
         pass
 
 def HistorySize():
-    #Contar as entradas do Usuário
+    '''
+    Retorna o tamanho do histórico
+    '''
     user_count = 0
     for msg in MEMORY.chat_memory.messages:
         if msg.type == 'human':
@@ -52,31 +57,24 @@ st.header('Chat com especialidade em condições de mercado')
 
 with st.container():  
 
-    systemInstruction = '''{data}'''
-    data = {'classificacao_exe_6': 'data'}
-
     cols = st.columns([0.8,0.2])
     with cols[0]:
-        messages = st.container(height=300)
+        messages = st.container(height=450)
         WriteHistory(messages)
         if HistorySize() < 3:
-
             if prompt := st.chat_input("Converse com o especialista de mercado", key='chat_input'):
-                #st.session_state[memoryKey].append({'Role':'Usuário', 'Msg':prompt})
                 messages.chat_message("user").write(prompt)
                 st.subheader('Pensamento do especialista',divider=True)
                 with st.chat_message("assistant"):
                     st_callback = StreamlitCallbackHandler(st.container())
                     try:
                         response = agent_chain.invoke(
-                            {"input": prompt}, #Passar uma lista resolve o erro de input?
+                            {"input": prompt},
                             {"callbacks": [st_callback]}
                         )
+                        messages.chat_message("assistant").write(f"Assistente: {response['output']}")
                     except Exception as e:
                         st.error(f"Erro: {e}")
-                    messages.chat_message("assistant").write(f"Assistente: {response['output']}")
-
-                    #st.session_state[memoryKey].append({'Role':'Assistente', 'Msg':response["output"]})
         else:
             st.write('Limite atingido, reinicia o chat para continuar')
     with cols[1]:

@@ -1,28 +1,30 @@
-# TP2 - Data-Driven Apps com Python
+# TP3 - Data-Driven Apps com Python
+
+## Problema
+
+O mercado financeiro é um ambiente complexo e dinâmico, onde a tomada de decisão é baseada em informações e análises de dados. A quantidade de informações disponíveis é vasta e pode ser difícil para um investidor iniciante ou mesmo para um investidor experiente, acompanhar todas as tendências e informações relevantes para a tomada de decisão. A falta de informações ou a análise incorreta de dados pode levar a prejuízos financeiros.
+
+## Solução
+
+A aplicação de agentes inteligentes irá auxiliar o investidor a tomar decisões mais assertivas no mercado financeiro. Através de buscas de tendências e condições atuais do mercado, o agente irá fornecer informações relevantes para o investidor.
+
+## Exemplos de uso
+
+- Saber mais sobre uma empresa específica -> Retorna um resumo sobre a empresa
+- Saber como um determinado setor está se comportando no mercado -> Retorna a situação atual do setor
+- Resumir notícias e/ou fatos relevantes de uma empresa -> Retorna um resumno do último fato relevante da empresa
+
+## Problemas conhecidos
+
+- Erro exporádico de índice de liste "langchain\chains\base.py", line 516
+- Erro exporádico em "langchain_community\utilities\google_finance.py", line 79
 
 ## Utilização
-1. Instalar os requisitos
-2. Importar a biblioteca request no arquivo TP2.ipynb
-3. Inicializar a API
-4. O próprio notebook tem requisições a API via request, sendo necessário apenas "rodar" as células
 
-## Requisitos
-pandas==2.2.3
-numpy==2.1.3
-matplotlib==3.9.2
-fastapi==0.115.5
-uvicorn==0.32.0
-pydantic==2.9.2
-huggingface_hub==0.26.2
-torch==2.5.1
-transformers==4.46.2
-requests==2.32.3
-sentencepiece==0.2.0
-langchain==0.3.7
-langchain_community==0.3.7
-google-generativeai==0.8.3
-langchain-google-genai==2.0.4
+Acesse: https://tp3-data-driven-apps-com-python.streamlit.app/
 
-## Comandos importantes
-pip install -r requirements.txt -> Instalar dependências
-uvicorn main:api --reload --port 8000 -> Inicializar a API
+Ou instale os requirements e rode o comando "streamlit run app\app.py"
+
+## Reflexão
+
+O uso de agentes inteligentes potencializou a LLM com dados atuais, indo além do seu treinamento base e entregando resultados resumidos e rápidos dentro do contexto solicitado, tornando uma aplicação muito prática e que entrega um resultado em muitos casos mais célere do que a busca manual por tais informações.

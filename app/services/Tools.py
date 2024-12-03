@@ -22,7 +22,7 @@ def GetTools(llm: Optional[BaseLanguageModel] = None) -> list[BaseTool]:
   
     prompt = hub.pull("hwchase17/self-ask-with-search")
 
-    search_wrapper = GoogleSearchRun(api_wrapper=GoogleSearchAPIWrapper(google_cse_id=st.secrets["GOOGLE_CSE_ID"]))
+    search_wrapper = GoogleSearchRun(api_wrapper=GoogleSearchAPIWrapper(google_cse_id=st.secrets["GOOGLE_CSE_ID"], google_api_key=st.secrets["GOOGLE_API_KEY"]))
     search_tool = Tool(
         name="Intermediate Answer",
         func=search_wrapper.invoke,#DuckDuckGoSearchRun(api_wrapper=DuckDuckGoSearchAPIWrapper()),#DuckDuckGoSearchAPIWrapper().run,
