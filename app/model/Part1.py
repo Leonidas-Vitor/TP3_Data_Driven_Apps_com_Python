@@ -32,7 +32,7 @@ st.write('''
     - Resumir notícias e/ou fatos relevantes de uma empresa
     ''')
 
-st.subheader('Objetivo',divider=True)
+st.subheader('Objetivo', divider=True)
 st.write(
     '''
     Ter um chatbot com implementação de agentes inteligentes que possa auxiliar o investidor a tomar decisões mais assertivas no mercado financeiro 
@@ -40,7 +40,7 @@ st.write(
     ''')
 
 
-st.subheader('Especificações',divider=True)
+st.subheader('Especificações', divider=True)
 st.markdown(
     '''
     |   Especificação   |   Descrição   |
@@ -51,10 +51,10 @@ st.markdown(
     '''
 )
 
-st.subheader('Problemas conhecidos',divider=True)
+st.subheader('Problemas conhecidos', divider=True)
+
 st.write(
     '''
-    - Erro exporádico de índice de liste "langchain\chains\base.py", line 516
-    - Erro exporádico em "langchain_community\utilities\google_finance.py", line 79
-    '''
-)
+    - Erro exporádico de indice de lista em "langchain\\chains\\base.py", line 516
+    - Erro exporádico em "langchain_community\\utilities\\google_finance.py", line 79
+    ''')
